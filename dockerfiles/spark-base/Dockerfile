@@ -19,7 +19,7 @@ ENV LC_ALL en_US.UTF-8
 
 # Install dependencies
 RUN apt update && apt upgrade -y && \
-    apt -y --no-install-recommends install curl gnupg && \
+    apt -y --no-install-recommends install curl gnupg bzip2 unzip less && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
