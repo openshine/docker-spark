@@ -25,7 +25,7 @@ RUN cd /tmp && \
     conda clean -tipsy
 
 # Install Python 3 packages
-RUN conda install --yes \
+RUN conda install --yes -q \
     'notebook=4.3*' 'ipywidgets=5.2*' 'pandas=0.19*' 'numexpr=2.6*' 'matplotlib=1.5*' \
     'scipy=0.17*' 'seaborn=0.7*' 'scikit-learn=0.17*' 'scikit-image=0.11*' 'sympy=1.0*' \
     'cython=0.23*' 'patsy=0.4*' 'statsmodels=0.6*' 'cloudpickle=0.1*' 'dill=0.2*' \
@@ -35,7 +35,7 @@ RUN conda install --yes \
     conda clean -tipsy
 
 # Install Python 2 packages
-RUN conda create -p $CONDA_DIR/envs/python2 python=2.7 \
+RUN conda create -p $CONDA_DIR/envs/python2 -q python=2.7 \
     'notebook=4.3*' 'ipywidgets=5.2*' 'pandas=0.19*' 'numexpr=2.6*' 'matplotlib=1.5*' \
     'scipy=0.17*' 'seaborn=0.7*' 'scikit-learn=0.17*' 'scikit-image=0.11*' 'sympy=1.0*' \
     'cython=0.23*' 'patsy=0.4*' 'statsmodels=0.6*' 'cloudpickle=0.1*' 'dill=0.2*' \
